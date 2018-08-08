@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        <div>{{ message }}</div>
     </div>
     <script>
         var vm = new Vue({
@@ -19,35 +19,43 @@
             },
             beforeCreate() {
                 console.group('创建前状态======')
-                console.log('beforeCreate');
+                console.log('创建前,el：',this.$el);
+                console.log('创建前,message：',this.message);
             },
             created(){
-                console.group('创建前状态======')
-                console.log('created')
+                console.group('创建完成状态======')
+                console.log('创建完成,el：',this.$el);
+                console.log('创建完成,message：',this.message);
             },
             beforeMount(){
                 console.group('挂载前状态======')
-                console.log('beforeMount')
+                console.log('挂载前,el：',this.$el);
+                console.log('挂载前,message：',this.message);
             },
             mounted(){
                 console.group('挂载结束状态======')
-                console.log('mounted')
+                console.log('挂载结束,el：',this.$el);
+                console.log('挂载结束,message：',this.message);
             },
             beforeUpdate(){
                 console.group('更新前状态======')
-                console.log('beforeUpdate')
+                console.log('更新前,el：',this.$el);
+                console.log('更新前,message：',this.message);
             },
             updated(){
                 console.group('更新完成状态======')
-                console.log('updated')
+                console.log('更新完成,el：',this.$el);
+                console.log('更新完成,message：',this.message);
             },
             beforeDestroy(){
                 console.group('销毁前状态======')
-                console.log('beforeDestroy')
+                console.log('销毁前,el：',this.$el);
+                console.log('销毁前,message：',this.message);
             },
             destroyed(){
                 console.group('销毁完成状态======')
-                console.log('destroyed')
+                console.log('销毁完成,el：',this.$el);
+                console.log('销毁完成完成,message：',this.message);
             },
            
         })
