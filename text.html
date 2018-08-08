@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data: {
+               
+            },
+            beforeCreate() {
+                console.group('创建前状态======')
+                console.log('beforeCreate');
+            },
+            created(){
+                console.group('创建前状态======')
+                console.log('created')
+            },
+            beforeMount(){
+                console.group('挂载前状态======')
+                console.log('beforeMount')
+            },
+            mounted(){
+                console.group('挂载结束状态======')
+                console.log('mounted')
+            },
+            beforeUpdate(){
+                console.group('更新前状态======')
+                console.log('beforeUpdate')
+            },
+            updated(){
+                console.group('更新完成状态======')
+                console.log('updated')
+            },
+            beforeDestroy(){
+                console.group('销毁前状态======')
+                console.log('beforeDestroy')
+            },
+            destroyed(){
+                console.group('销毁完成状态======')
+                console.log('destroyed')
+            },
+           
+        })
+        
+    </script>
+</body>
+</html>
