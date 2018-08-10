@@ -20,9 +20,9 @@
             <div>
                 <p class="left">任务列表</p>
                 <ul class="right">
-                    <li @click="handleAll" :class="{active:this.allClass}">全部</li>
-                    <li @click="handleComplete" :class="{active:this.completeClass}">已完成</li>
-                    <li @click="handleUncomplete" :class="{active:this.unClass}">未完成</li>
+                    <li @click="handleAll" :class="{active:this.all}">全部</li>
+                    <li @click="handleComplete" :class="{active:this.complete}">已完成</li>
+                    <li @click="handleUncomplete" :class="{active:this.uncomplete}">未完成</li>
                 </ul>
             </div>
                 
@@ -100,26 +100,26 @@
                 handleAll: function (){
                     this.all = true,
                     this.complete = false,
-                    this.uncomplete = false,
-                    this.allClass = true,
-                    this.completeClass = false,
-                    this.unClass = false
+                    this.uncomplete = false
+                    // this.allClass = true,
+                    // this.completeClass = false,
+                    // this.unClass = false
                 },
                 handleComplete: function() {
                     this.all = false,
                     this.complete = true,
-                    this.uncomplete = false,
-                    this.allClass = false,
-                    this.completeClass = true,
-                    this.unClass = false
+                    this.uncomplete = false
+                    // this.allClass = false,
+                    // this.completeClass = true,
+                    // this.unClass = false
                 },
                 handleUncomplete: function() {
                     this.all = false,
                     this.complete = false,
-                    this.uncomplete = true,
-                    this.allClass = false,
-                    this.completeClass = false,
-                    this.unClass = true
+                    this.uncomplete = true
+                    // this.allClass = false,
+                    // this.completeClass = false,
+                    // this.unClass = true
                 },
                 handleCompleteAdd: function(inputValue) { 
               
