@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'todos-vuejs';
+const STORAGE_KEY = 'list';
 export default {
     fetch: function() {
         return JSON.parse(window.localStorage.getItem(

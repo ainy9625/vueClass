@@ -59,7 +59,7 @@
             <ul class="uncomplete" v-show="uncomplete">
                 <todo-item-uncomplete
                    
-                    v-for="(item, index) in uncompleteList" 
+                    v-for="(item, index) in list" 
                     :key="index"
                     :content="item"
                     :index="index"
@@ -169,7 +169,9 @@
                     this.completeList.push(inputValue)
                 },
                 handleUncompleteAdd: function() {
-                    this.uncompleteList.push(inputValue)
+                    if(this.inputValue!==''){
+                        this.list.push(this.inputValue)
+                    }
 
                 },
                 
