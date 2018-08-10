@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Todo</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="todoList">
+        <div class="title">
+            <h1>Vue Todo</h1>
+            <p>添加任务，管理每日计划</p>
+        </div>
+        <div class="add">
+            <input type="text" placeholder="今天计划完成什么？" v-model="inputValue" @keyup.enter="handleAdd" />
+            <button @click="handleAdd">添加任务</button>
+        </div>
+        <div class="list" v-if="flag">           
+            <div>
+                <p class="left">任务列表</p>
+                <ul class="right">
+                    <li @click="handleAll" :class="{active:this.allClass}">全部</li>
+                    <li @click="handleComplete" :class="{active:this.completeClass}">已完成</li>
+                    <li @click="handleUncomplete" :class="{active:this.unClass}">未完成</li>
+                </ul>
+            </div>
+                
+            <ul class="all" v-show="all">
+                <li v-for="(item, index) in list" :key="index">
+                    {{ item }}
+                    <div class="btn">
+                        <button @click="handleCompleteAdd(item)">标记已完成</button>
+                        <button @click="handleUncompleteAdd(item)">标记未完成</button>
+                        <button @click="handleDelete">删除</button>
+                    </div>
+                </li>
+                <span>全部共{{list.length}}项任务</span>
+            </ul>
+            <ul class="complete" v-show="complete">
+                <li v-for="(item, index) in completeList" :key="index">
+                    {{ item }}
+                    <div class="btn">
+                        <button @click="handleCompleteAdd(item)">标记已完成</button>
+                        <button @click="handleUncompleteAdd(item)">标记未完成</button>
+                        <button @click="handleDelete">删除</button>
+                    </div>
+                </li>
+                <span>已完成共{{completeList.length}}项任务</span>
+            </ul>
+            <ul class="uncomplete" v-show="uncomplete">
+                <li v-for="(item, index) in uncompleteList" :key="index">
+                    {{ item }}
+                    <div class="btn">
+                        <button @click="handleCompleteAdd(item)">标记已完成</button>
+                        <button @click="handleUncompleteAdd(item)">标记未完成</button>
+                        <button @click="handleDelete">删除</button>
+                    </div>
+                </li>
+                <span>未完成共{{uncompleteList.length}}项任务</span>
+            </ul>
+            
+                
+      
+        </div>
+    </div>
+    <script>
+        // import Store from './store'
+        const todoList = new Vue({
+            el: '#todoList',
+            data: {
+                inputValue:'',
+                // list: Store.fetch(),
+                list: [],
+                completeList: [],
+                uncompleteList: [],
+                all: true,
+                complete: false,
+                uncomplete: false,
+                flag: false,
+                allClass: true,
+                completeClass: false,
+                unClass: false
+            },
+            methods: {
+                handleAdd: function() {
+                    if(this.inputValue!==''){
+                        this.list.push(this.inputValue),
+                        this.flag = true
+                    }
+                    this.inputValue = ''
+                    
+                },
+                handleDelete: function() {
+                    this.list.splice('index',1)
+                    this.completeList.splice('index',1)
+                    this.uncompleteList.splice('index',1)
+
+                },
+                handleAll: function (){
+                    this.all = true,
+                    this.complete = false,
+                    this.uncomplete = false,
+                    this.allClass = true,
+                    this.completeClass = false,
+                    this.unClass = false
+                },
+                handleComplete: function() {
+                    this.all = false,
+                    this.complete = true,
+                    this.uncomplete = false,
+                    this.allClass = false,
+                    this.completeClass = true,
+                    this.unClass = false
+                },
+                handleUncomplete: function() {
+                    this.all = false,
+                    this.complete = false,
+                    this.uncomplete = true,
+                    this.allClass = false,
+                    this.completeClass = false,
+                    this.unClass = true
+                },
+                handleCompleteAdd: function(inputValue) { 
+              
+                        this.completeList.push(inputValue)
+                      
+                    
+                },
+                handleUncompleteAdd: function(inputValue) {
+                    this.uncompleteList.push(inputValue)
+                },
+                
+
+
+            },
+            // watch: {
+            //     list: {
+            //         handler: function(list) {
+            //             Store.save(list)
+            //         },
+            //         deep: true
+            //     }
+            // }
+        })
+
+    </script>
+    
+</body>
+</html>
