@@ -64,7 +64,7 @@ input{
     width: 475px;
     margin:20px auto
 }
-.add button{
+button{
     background-color: #4579B2;
     border: 0;
     color: white;
@@ -87,11 +87,12 @@ input{
   
     border:1px solid #ADC3DA;
     /* margin-top:20px; */
-    width: 57%;
-    /* margin:0 auto; */
-    position: absolute;
+    /* width: 57%; */
+    margin:0 auto;
+    /* position: absolute;
     left: 272px;
-    top:322px
+    top:322px */
+    width: 775px
     
 }
 .all li,.complete li,.uncomplete li{
