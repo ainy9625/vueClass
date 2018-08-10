@@ -1,0 +1,91 @@
+html,body{
+    padding: 0;
+    margin: 0
+}
+li{
+    list-style: none;
+}
+#todoList{
+    width:100%;
+    margin: 0 auto;
+    /* border:1px solid red */
+    
+}
+.list>div{
+    overflow: hidden;
+    width: 60% ;
+    background-color:#4579B2;
+    margin: 0 auto;
+    border-radius: 8px
+}
+.left{
+    float: left;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 10px
+}
+.right{
+    overflow: hidden;
+    float: right;
+    background-color: white;
+    font-size: 14px;
+    margin-right: 10px;
+   
+    border-radius: 5px
+}
+.right li{
+    float: left;
+    cursor: pointer;
+    padding:5px 10px;
+
+}
+
+.right li:hover{
+    background-color: #76BFDC;
+    color: white
+}
+.title{
+    text-align: center;
+    background-color: #EEEEEE;
+    height: 150px;
+    padding: 30px;
+    margin: 0 auto
+}
+input{
+    width: 400px;
+    height: 25px;
+}
+.add{
+    width: 475px;
+    margin:20px auto
+}
+.add button{
+    background-color: #4579B2;
+    border: 0;
+    color: white;
+    height: 30px;
+    border-radius: 5px
+}
+
+.btn{
+    float: right;
+    
+}
+.content{
+    overflow: hidden;
+    margin-top:10px
+}
+.content button{
+    margin-left: 5px
+}
+.all,.complete,.uncomplete{
+    border:1px solid #ADC3DA;
+    /* margin-top:20px; */
+    width: 57%;
+    /* margin:0 auto; */
+    position: absolute;
+    left: 272px;
+    top:322px
+    
+}
