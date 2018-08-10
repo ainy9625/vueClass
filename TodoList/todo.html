@@ -78,9 +78,6 @@
                 complete: false,
                 uncomplete: false,
                 flag: false,
-                allClass: true,
-                completeClass: false,
-                unClass: false
             },
             methods: {
                 handleAdd: function() {
@@ -101,25 +98,16 @@
                     this.all = true,
                     this.complete = false,
                     this.uncomplete = false
-                    // this.allClass = true,
-                    // this.completeClass = false,
-                    // this.unClass = false
                 },
                 handleComplete: function() {
                     this.all = false,
                     this.complete = true,
                     this.uncomplete = false
-                    // this.allClass = false,
-                    // this.completeClass = true,
-                    // this.unClass = false
                 },
                 handleUncomplete: function() {
                     this.all = false,
                     this.complete = false,
                     this.uncomplete = true
-                    // this.allClass = false,
-                    // this.completeClass = false,
-                    // this.unClass = true
                 },
                 handleCompleteAdd: function(inputValue) { 
               
